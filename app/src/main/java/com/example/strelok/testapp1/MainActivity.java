@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
         passView = (EditText) findViewById(R.id.password);
 
         Button btn = (Button) findViewById(R.id.onAuth);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View w){
+            public void onClick(View w) {
                 login = loginView.getText().toString();
                 password = passView.getText().toString();
 
-                if("admin".equals(login) && "Qwerty123".equals(password)) {
+                if ("admin".equals(login) && "Qwerty123".equals(password)) {
                     //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplication());
                     //SharedPreferences.Editor editor = preferences.edit();
                     //editor.putString("userName", login);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("login", login);
                     startActivity(intent);
                 } else {
-                  Toast.makeText(getApplication(), "Пароль не верный", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication(), "Пароль не верный", Toast.LENGTH_SHORT).show();
                 }
                 // txt = (TextView) findViewById(R.id.newText);
                 // txt.setText(login);
