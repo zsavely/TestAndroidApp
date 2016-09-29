@@ -7,11 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by strelok on 28.09.16.
- */
-
-public class Scrum extends AppCompatActivity{
+public class ScrumActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
@@ -20,13 +16,11 @@ public class Scrum extends AppCompatActivity{
 
         String log;
         TextView txt = (TextView) findViewById(R.id.loginName);
-        txt.setText(getIntent().getExtras().get("login").toString());
+        txt.setText(getIntent().getStringExtra("login"));
 
-        SharedPreferences preferences = PreferenceManager
-                .getDefaultSharedPreferences(getApplication());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplication());
         log = preferences.getString("userName", "default_value");
 
         txt.setText(log);
-
     }
 }
